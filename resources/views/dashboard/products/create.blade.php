@@ -2,7 +2,7 @@
 
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active">Create Categories</li>
+    <li class="breadcrumb-item active">Create Products</li>
 @endsection
 
 
@@ -15,13 +15,13 @@
         <!-- general form elements -->
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Create Category</h3>
+                <h3 class="card-title">Create Product</h3>
             </div> <!--end header -->
             <!-- form start -->
-                <form action="{{ route('dashboard.categories.store')}}" method="post" style="" enctype="multipart/form-data">
+                <form action="{{ route('dashboard.products.store')}}" method="post" style="" enctype="multipart/form-data">
                     @csrf
-                    @include('dashboard.categories._form')
-                
+                    @include('dashboard.products._form')
+
                 </form>
 
         </div> <!--end card -->

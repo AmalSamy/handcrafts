@@ -20,13 +20,14 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
-        
+
             $name = $this->faker->words(3,true);
 
             return [
                 'name' => $name,
                 'slug' =>Str::slug($name),
                 'description' => $this->faker->sentence(15),
+                'quantity' =>$this->faker->randomDigit(),
                 'image' => $this->faker->imageUrl(600, 600),
                 'price' => $this->faker->randomFloat(1, 1, 499),
                 'compare_price' => $this->faker->randomFloat(1, 500, 999),

@@ -9,9 +9,9 @@
     <div class="row mx-4 mb ">
         <div class="col-lg-12 margin-tb">
             <div class="pull-right">
-                {{-- <a class="btn btn-success " href="{{ route('dashboard.prouducts.create') }}"> <i --}}
-                        {{-- class="nav-icon fas  fa-plus-square"></i> Create Prouducts </a> --}}
-                {{-- <a href="{{ route('dashboard.prouducts.trash') }}" class="btn  btn-outline-dark">Trash</a> --}}
+                 <a class="btn btn-success " href="{{ route('dashboard.products.create') }}"> <i
+                         class="nav-icon fas  fa-plus-square"></i> Create Prouducts </a>
+                 <a href="{{ route('dashboard.products.trash') }}" class="btn  btn-outline-dark">Trash</a>
 
             </div>
               {{-- alert --}}
@@ -44,9 +44,18 @@
                     <th>Name</th>
                     <th>Category</th>
                     <th>store</th>
-                    <th>Status</th>
-                    <th>Created_at</th>
-                    <th>Action</th>
+                    <th>is_visible</th>
+                    <th>slug</th>
+                    <th>delivery_period</th>
+                    <th>image</th>
+                    <th>price</th>
+                    <th>compare_price</th>
+                    <th>opations</th>
+                    <th>rating</th>
+                    <th>featured</th>
+                    <th>status</th>
+                    <th>Active</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -55,10 +64,19 @@
                         <tr>
                             <td>{{ $product->id }}</td>
                             <td>{{ $product->name }}</td>
-                            <td>{{ $product->category->name }}</td>
-                            <td>{{ $product->store->name}}</td>
+                            <td>{{ $product->Category->name}}</td>
+                            <td>{{ $product->store->name }}</td>
+                            <td>{{ $product->is_visible }}</td>
+                            <td>{{ $product->slug }}</td>
+                            <td>{{ $product->delivery_period }}</td>
+                            <td><img src="{{ $product->image }}" height="50px" width="50px"></td>
+                            <td>{{ $product->price }}</td>
+                            <td>{{ $product->compare_price }}</td>
+                            <td>{{ $product->opations }}</td>
+                            <td>{{ $product->rating }}</td>
+                            <td>{{ $product->featured }}</td>
                             <td>{{ $product->status }}</td>
-                            <td>{{ $product->created_at }}</td>
+
                             <td>
                                 <div class="btn-group">
 

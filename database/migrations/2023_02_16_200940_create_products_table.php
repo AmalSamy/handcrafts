@@ -18,8 +18,10 @@ return new class extends Migration
             $table->foreignId('store_id')->constrained('stores')->cascadeOnDelete();
             $table->foreignId('category_id')->nullable()->constrained('categories')->nullOnDelete();
             $table->string('name');
-            $table->string('slug')->unique();
+            $table->string('slug')->unique()->nullable();
             $table->text('description')->nullable();
+            $table->integer('quantity')->nullable();
+            $table->integer('delivery_period')->nullable();
             $table->string('image')->nullable();
             $table->float('price')->default(0);
             $table->float('compare_price')->nullable();

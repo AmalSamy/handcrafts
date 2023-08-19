@@ -12,7 +12,7 @@ return new class extends Migration
      * @return void
      */
     public function up()
-    { 
+    {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->foreignId('parent_id')
@@ -21,7 +21,7 @@ return new class extends Migration
             ->nullOnDelete();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->string('slug')->unique();
+            $table->string('slug')->unique()->nullable();
             $table->string('image')->nullable();
             $table->enum('status',['active','archived'])->default('active');
             $table->timestamps();

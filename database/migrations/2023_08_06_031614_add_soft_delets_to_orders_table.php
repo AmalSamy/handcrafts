@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('phone_number')->after('email');
-            $table->foreignId('store_id')->nullable()->after('phone_number')->constrained('stores')->nullOnDelete();
+        Schema::table('orders', function (Blueprint $table) {
+            $table->softDeletes();
 
         });
     }
@@ -27,11 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('email');
-            $table->dropConstrainedForeignId('store_id');
-
-
+        Schema::table('orders', function (Blueprint $table) {
+            //
         });
     }
 };

@@ -21,7 +21,9 @@ class StoreFactory extends Factory
             $name = $this->faker->words(2, true);
         return [
             'name' => $name,
-            'slug' =>Str::slug($name),
+            'phone_whatsapp'=>'0598765456',
+            'url_facebook'=>'https://facebook.com/',
+            'url_instegram'=>'https://instagram.com/',
             'description' => $this->faker->sentence(15),
             'logo_image' => $this->faker->imageUrl(300, 300),
             'cover_image' => $this->faker->imageUrl(800, 600),

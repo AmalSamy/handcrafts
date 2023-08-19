@@ -13,6 +13,9 @@ class Category extends Model
     use HasFactory ,SoftDeletes;
 
     protected $fillable=['name','description','image','status'];
+    protected $hidden =['created_at','updated_at','deleted_at','slug'];
+
+
 
     public static function rouls($id=0){
         return [
@@ -50,6 +53,7 @@ class Category extends Model
     public function products(){
         return $this->hasMany(Product::class,'category_id','id');
     }
+
     public function parent(){
         return $this->belongsTo(Category::class,'category_id','id');
     }

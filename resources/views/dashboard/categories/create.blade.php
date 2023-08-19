@@ -21,7 +21,7 @@
                 <form action="{{ route('dashboard.categories.store')}}" method="post" style="" enctype="multipart/form-data">
                     @csrf
                     @include('dashboard.categories._form')
-                
+
                 </form>
 
         </div> <!--end card -->
@@ -30,3 +30,5 @@
 
 @section('script ')
 @endsection
+
+

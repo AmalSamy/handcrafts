@@ -16,11 +16,14 @@ return new class extends Migration
         Schema::create('stores', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('slug')->unique();
             $table->string('description')->nullable();
-            $table->string('logo_image');
-            $table->string('cover_image');
+            $table->string('phone_whatsapp')->nullable();
+            $table->string('url_facebook')->nullable();
+            $table->string('url_instegram')->nullable();
+            $table->string('logo_image')->nullable();;
+            $table->string('cover_image')->nullable();;
             $table->enum('status',['active','inactive'])->default('active');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

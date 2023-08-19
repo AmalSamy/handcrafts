@@ -7,6 +7,7 @@ use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -42,7 +43,7 @@ class CategoriesController extends Controller{
             'parents.name as parent_name'
         ])->withCount('products')
         ->filter($request->query())
-        ->paginate(2);;
+        ->paginate(2);
        // $categories =Category::filter($request->query())->paginate(2);
 
         return response()->view('dashboard.categories.index',compact('categories'));
@@ -55,6 +56,9 @@ class CategoriesController extends Controller{
      */
     public function create()
     {
+//        if (Gate::define('categories.create')){
+//            abort(403);
+//        }
         $parents = Category::get();
         $category = new Category();
         return response()->view('dashboard.categories.create',compact('category','parents'));
@@ -135,12 +139,14 @@ class CategoriesController extends Controller{
     {
         $request->validate(Category::rouls());
         $category=Category::findOrFail($id);
+
         $old_image=$category->image;
        // dd($old_image);
         $category->name = $request->post('name');
         $category->parent_id = $request->post('parent_id');
         $category->description = $request->post('description');
         $category->status = $request->post('status');
+
         $new_image=$this->uploadeFile($request);
 
        // dd($new_image);// فى حالة أنه ما بعتت صورة رح يرجع قيمة نل

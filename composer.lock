@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "61adc8171567602f124bbe03ce3e9323",
+    "content-hash": "7bdccd3843ed7c15a7a0b80657feb4f8",
     "packages": [
         {
             "name": "brick/math",
@@ -1181,16 +1181,16 @@
         },
         {
             "name": "laravel/sanctum",
-            "version": "v3.2.1",
+            "version": "v3.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sanctum.git",
-                "reference": "d09d69bac55708fcd4a3b305d760e673d888baf9"
+                "reference": "8ebda85d59d3c414863a7f4d816ef8302faad876"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sanctum/zipball/d09d69bac55708fcd4a3b305d760e673d888baf9",
-                "reference": "d09d69bac55708fcd4a3b305d760e673d888baf9",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/8ebda85d59d3c414863a7f4d816ef8302faad876",
+                "reference": "8ebda85d59d3c414863a7f4d816ef8302faad876",
                 "shasum": ""
             },
             "require": {
@@ -1204,6 +1204,7 @@
             "require-dev": {
                 "mockery/mockery": "^1.0",
                 "orchestra/testbench": "^7.0|^8.0",
+                "phpstan/phpstan": "^1.10",
                 "phpunit/phpunit": "^9.3"
             },
             "type": "library",
@@ -1242,7 +1243,7 @@
                 "issues": "https://github.com/laravel/sanctum/issues",
                 "source": "https://github.com/laravel/sanctum"
             },
-            "time": "2023-01-13T15:41:49+00:00"
+            "time": "2023-05-01T19:39:51+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -3655,6 +3656,87 @@
                 }
             ],
             "time": "2023-02-01T08:32:25+00:00"
+        },
+        {
+            "name": "symfony/intl",
+            "version": "v6.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/intl.git",
+                "reference": "fdf4aff85fff2cc681cc45936b6b2a52731acc23"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/intl/zipball/fdf4aff85fff2cc681cc45936b6b2a52731acc23",
+                "reference": "fdf4aff85fff2cc681cc45936b6b2a52731acc23",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "symfony/filesystem": "^5.4|^6.0",
+                "symfony/finder": "^5.4|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Intl\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                },
+                {
+                    "name": "Eriksen Costa",
+                    "email": "eriksen.costa@infranology.com.br"
+                },
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides access to the localization data of the ICU library",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "i18n",
+                "icu",
+                "internationalization",
+                "intl",
+                "l10n",
+                "localization"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/intl/tree/v6.3.1"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-06-21T12:08:28+00:00"
         },
         {
             "name": "symfony/mailer",

@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
             'name'=>'sahar alsalmy',
             'email'=>'sahar22@gmail.com',
             'password'=>Hash::make('password'),
+            'phone_number'=>'0567898765',
         ]);
 
         //using Query builder

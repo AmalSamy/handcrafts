@@ -44,14 +44,14 @@ return [
             'throw' => false,
         ],
 
-        //لو أنا من البداية بدي أخزن بشكل ببلكك بروح أنشلأ دسك خاص وبكون نوعه ببلك
-        // 'uploads' => [
-        //     'driver' => 'local',
-        //     'root' => public_path('uploads'),
-        //     'url' => env('APP_URL').'/uploads',
-        //     'visibility' => 'public',
-        //     'throw' => false,
-        // ],
+       // لو أنا من البداية بدي أخزن بشكل ببلكك بروح أنشلأ دسك خاص وبكون نوعه ببلك
+        'uploads' => [
+            'driver' => 'local',
+            'root' => public_path('uploads'),
+            'url' => env('APP_URL').'/uploads',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
 
          //هنا لو بدي أخزن الصور على سيرفرات امازون
         's3' => [

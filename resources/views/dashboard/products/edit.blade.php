@@ -2,7 +2,7 @@
 
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active">Edit Categories</li>
+    <li class="breadcrumb-item active">Edit product</li>
 @endsection
 
 
@@ -15,13 +15,13 @@
         <!-- general form elements -->
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Create Category</h3>
+                <h3 class="card-title">Create product</h3>
             </div> <!--end header -->
             <!-- form start -->
-                <form action="{{ route('dashboard.categories.update',$category->id)}}" method="post" style="" enctype="multipart/form-data">
+                <form action="{{ route('dashboard.products.update',$product->id)}}" method="post" style="" enctype="multipart/form-data">
                     @csrf
                     @method('put')
-                    @include('dashboard.categories._form',['buttom_lapel'=>'Update'])
+                    @include('dashboard.products._form',['buttom_lapel'=>'Update'])
 
                 </form>
 

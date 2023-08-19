@@ -2,14 +2,14 @@
 
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active">Categories Trashed</li>
+    <li class="breadcrumb-item active">Products Trashed</li>
 @endsection
 
 @section('content')
     <div class="row mx-4 mb ">
         <div class="col-lg-12 margin-tb">
             <div class="pull-right">
-                <a class="btn btn-success " href="{{ route('dashboard.categories.index') }}"> <i
+                <a class="btn btn-success " href="{{ route('dashboard.products.index') }}"> <i
                         class="nav-icon fas"></i>backe</a>
 
             </div>
@@ -48,30 +48,30 @@
                 </tr>
             </thead>
             <tbody>
-                @if ($categories->count())
-                    @foreach ($categories as $category)
+                @if ($products->count())
+                    @foreach ($products as $product)
                         <tr>
-                            <td>{{ $category->id }}</td>
-                            <td>{{ $category->name }}</td>
+                            <td>{{ $product->id }}</td>
+                            <td>{{ $product->name }}</td>
                             <td>
-                                <img src="{{ asset('storage/' . $category->image) }}" alt="img"
+                                <img src="{{ asset('storage/' . $product->image) }}" alt="img"
                                     style="width: 60px;border-radius: 5px;">
                             </td>
-                            <td>{{ $category->status }}</td>
-                            <td>{{ $category->deleted_at }}</td>
+                            <td>{{ $product->status }}</td>
+                            <td>{{ $product->deleted_at }}</td>
                             <td>
                                 <div class="btn-group">
 
-                                    <form action="{{ route('dashboard.categories.restore', $category->id) }}" method="post">
+                                    <form action="{{ route('dashboard.products.restore', $product->id) }}" method="post">
                                         @csrf
                                         @method('put')
                                         <button type="submit" class="btn btn-info mx-2"><strong>Restore</strong></button>
                                     </form>
 
-                                    <form action="{{ route('dashboard.categories.force-delete', $category->id) }}" method="post">
+                                    <form action="{{ route('dashboard.products.force-delete', $product->id) }}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="btn btn-danger"><strong>Delete</strong> </i></button>
+                                        <button type="submit" class="btn btn-danger"><strong>Delete</strong> </button>
                                     </form>
 
 
@@ -81,7 +81,7 @@
                     @endforeach
                 @else
                     <tr>
-                        <td colspan="7">No Categories</td>
+                        <td colspan="7">No Products</td>
                     </tr>
                 @endif
 
@@ -89,7 +89,7 @@
         </table>
 
 
-        {{ $categories->withQueryString()->links() }}
+        {{ $products->withQueryString()->links() }}
     </div>
     </div>
     <!-- /.card-body -->

@@ -22,25 +22,25 @@
     </thead>
     <tbody>
         @php
-            $products = $category->products()->with('store')->latest()->paginate(5);
+            $category = $category->products()->with('store')->latest()->paginate(5);
         @endphp
         @forelse($products as $product)
         <tr>
-            <td><img src="{{ asset('storage/' . $product->image) }}" alt="" height="50"></td>
-            <td>{{ $product->name }}</td>
-            <td>{{ $product->store->name }}</td>
-            <td>{{ $product->status }}</td>
-            <td>{{ $product->created_at }}</td>
+            <td><img src="{{ asset('storage/' . $category->image) }}" alt="" height="50"></td>
+            <td>{{ $category->name }}</td>
+            <td>{{ $category->store->name }}</td>
+            <td>{{ $category->status }}</td>
+            <td>{{ $category->created_at }}</td>
         </tr>
         @empty
         <tr>
-            <td colspan="5">No products defined.</td>
+            <td colspan="5">No $category defined.</td>
         </tr>
         @endforelse
     </tbody>
 </table>
 
-{{ $products->links() }}
+{{ $category->links() }}
 
 @endsection
 
