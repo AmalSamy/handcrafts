@@ -1,5 +1,5 @@
 
-@if (session()->has('$type'))
+@if (session()->has($type))
 <div>
     <div class="card card-{{ $type }}">
     <div class="card-header">

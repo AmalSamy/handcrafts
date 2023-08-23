@@ -14,6 +14,7 @@
                  <a href="{{ route('dashboard.products.trash') }}" class="btn  btn-outline-dark">Trash</a>
 
             </div>
+            <br>
               {{-- alert --}}
               <x-alert type="success"/>
               <x-alert type="info"/>
@@ -69,7 +70,7 @@
                             <td>{{ $product->is_visible }}</td>
                             <td>{{ $product->slug }}</td>
                             <td>{{ $product->delivery_period }}</td>
-                            <td><img src="{{ $product->image }}" height="50px" width="50px"></td>
+                            <td><img src="{{ asset('storage/' . $product->image) }}" height="50px" width="50px"></td>
                             <td>{{ $product->price }}</td>
                             <td>{{ $product->compare_price }}</td>
                             <td>{{ $product->opations }}</td>

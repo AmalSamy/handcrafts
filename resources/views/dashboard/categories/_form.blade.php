@@ -36,7 +36,7 @@
         </div><!-- end input 3 -->
         <div class="col-sm">
             <div class="form-group">
-                <x-form.label label="description"/>
+                <label>Description</label>
                 <x-form.textarea  name="description"
                  placeholder="Enter ..." :value="$category->description" />
             </div>

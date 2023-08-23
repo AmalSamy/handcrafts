@@ -15,6 +15,7 @@
 
             </div>
               {{-- alert --}}
+            <br>
               <x-alert type="success"/>
               <x-alert type="info"/>
 
@@ -57,6 +58,7 @@
                             <td>
                                 <img src="{{ asset('storage/' . $category->image) }}" alt="img"
                                     style="width: 60px;border-radius: 5px;">
+
                             </td>
                             <td>{{ $category->parent_name }}</td>
                             <td>{{ $category->products_count }}</td>
