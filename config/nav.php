@@ -63,7 +63,7 @@ return [
         'route' => 'dashboard.settings.index',
         'title' => 'settings',
         'active' => 'dashboard.settings.*',
-        'ability' => 'settings.index'
+//        'ability' => 'settings.index'
 
 
     ],

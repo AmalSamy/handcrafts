@@ -46,6 +46,7 @@
                     <th>Category</th>
                     <th>store</th>
                     <th>is_visible</th>
+                    <th>is_favorite</th>
                     <th>slug</th>
                     <th>delivery_period</th>
                     <th>image</th>
@@ -68,6 +69,7 @@
                             <td>{{ $product->Category->name}}</td>
                             <td>{{ $product->store->name }}</td>
                             <td>{{ $product->is_visible }}</td>
+                            <td>{{ $product->is_favorite }}</td>
                             <td>{{ $product->slug }}</td>
                             <td>{{ $product->delivery_period }}</td>
                             <td><img src="{{ asset('storage/' . $product->image) }}" height="50px" width="50px"></td>

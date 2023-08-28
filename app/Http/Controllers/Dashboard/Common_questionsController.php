@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCommon_questionsRequest;
+use App\Http\Requests\UpdateCommon_questionsRequest;
 use App\Models\CommonQuestion;
 use Illuminate\Http\Request;
 
@@ -38,14 +40,14 @@ class Common_questionsController extends Controller
      */
     public function store(Request $request)
     {
-        $common_questions=new CommonQuestion();
 
+        $common_questions=new CommonQuestion();
         $common_questions->title= $request->input('title');
         $common_questions->desc= $request->input('desc');
         $common_questions->status= $request->input('status');
-
         $common_questions->save();
-        return redirect()->route('dashboard.common_questions.index')->with('success','CommonQuestions Created ');
+        return redirect()->route('dashboard.common_questions.index',
+        )->with('success', 'common_questions Created ');
     }
 
     /**

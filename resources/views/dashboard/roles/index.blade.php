@@ -10,7 +10,7 @@
         <div class="col-lg-12 margin-tb">
             <div class="pull-right">
                 <a class="btn btn-success " href="{{ route('dashboard.roles.create') }}"> <i
-                        class="nav-icon fas  fa-plus-square"></i> Create Category </a>
+                        class="nav-icon fas  fa-plus-square"></i> Create Role </a>
 
             </div>
               {{-- alert --}}

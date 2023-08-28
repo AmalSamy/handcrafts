@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
+use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Store;
@@ -48,13 +51,11 @@ class ProductsController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
 
         $user = Auth::user();
-
         $storeId = $user->store_id;
-
         $product = new Product();
         $new_image = $this->uploadeFile($request);
         $product->store_id = $storeId;
@@ -74,9 +75,6 @@ class ProductsController extends Controller
         $product->status = $request->input('status');
 
         $product->save();
-
-
-
 
         return redirect()->route('dashboard.products.index',
         )->with('success', 'Product Created ');
@@ -120,13 +118,15 @@ class ProductsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateProductRequest $request, $id)
     {
         $product = Product::findOrFail($id);
+
         $old_image = $product->image;
         $product->name = $request->post('name');
         $product->category_id = $request->post('category_id');
         $product->is_visible = $request->post('is_visible');
+        $product->is_favorite = $request->post('is_favorite');
         $product->slug = Str::slug($request->post('name'));
         $product->description = $request->post('description');
         $product->quantity = $request->post('quantity');
@@ -149,7 +149,7 @@ class ProductsController extends Controller
         }
 
 
-        return redirect('dashboard/ products')->with('success', 'Product Updated!');
+        return redirect('dashboard/products')->with('success', 'Product Updated!');
     }
 
     /**
